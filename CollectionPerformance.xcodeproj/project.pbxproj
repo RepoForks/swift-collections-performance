@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F271391BBA31706E1CEF03A /* Pods_RealmDatabaseWizard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AC13936801035B4289316 /* Pods_RealmDatabaseWizard.framework */; };
 		AE0164CD200CC7E0004AB43A /* Collection+Permute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0164CC200CC7E0004AB43A /* Collection+Permute.swift */; };
+		AE02EAF8200CE739002D6F88 /* CollectionPerformanceCorrectnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02EAF7200CE739002D6F88 /* CollectionPerformanceCorrectnessTests.swift */; };
 		AE5212A120065C3F001BEB46 /* CleverDatabase.realm in Resources */ = {isa = PBXBuildFile; fileRef = AE52129F20065C3D001BEB46 /* CleverDatabase.realm */; };
 		AE5212A220065C3F001BEB46 /* Database.realm in Resources */ = {isa = PBXBuildFile; fileRef = AE5212A020065C3F001BEB46 /* Database.realm */; };
 		AE5212A420065C57001BEB46 /* RealmValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5212A320065C57001BEB46 /* RealmValidators.swift */; };
@@ -53,6 +54,7 @@
 		4C4AC13936801035B4289316 /* Pods_RealmDatabaseWizard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmDatabaseWizard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DCC8FE8D7E7FF6065C8215 /* Pods-CollectionPerformanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionPerformanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollectionPerformanceTests/Pods-CollectionPerformanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE0164CC200CC7E0004AB43A /* Collection+Permute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Permute.swift"; sourceTree = "<group>"; };
+		AE02EAF7200CE739002D6F88 /* CollectionPerformanceCorrectnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPerformanceCorrectnessTests.swift; sourceTree = "<group>"; };
 		AE52129F20065C3D001BEB46 /* CleverDatabase.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = CleverDatabase.realm; sourceTree = "<group>"; };
 		AE5212A020065C3F001BEB46 /* Database.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.realm; sourceTree = "<group>"; };
 		AE5212A320065C57001BEB46 /* RealmValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmValidators.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				AEE6EBDA1FFD3F7B0097D55E /* CollectionPerformanceContainTests.swift */,
 				AEE6EBDC1FFE3C8A0097D55E /* CollectionPerformanceLettersTests.swift */,
 				AEDC67E0200392F90082F95E /* CollectionPerformanceRegexTests.swift */,
+				AE02EAF7200CE739002D6F88 /* CollectionPerformanceCorrectnessTests.swift */,
 				AEE6EBCD1FFD32650097D55E /* Info.plist */,
 			);
 			path = CollectionPerformanceTests;
@@ -537,6 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEDC67E1200392F90082F95E /* CollectionPerformanceRegexTests.swift in Sources */,
+				AE02EAF8200CE739002D6F88 /* CollectionPerformanceCorrectnessTests.swift in Sources */,
 				AEE6EBDD1FFE3C8A0097D55E /* CollectionPerformanceLettersTests.swift in Sources */,
 				AEE6EBCC1FFD32650097D55E /* CollectionPerformanceInitTests.swift in Sources */,
 				AEE6EBDB1FFD3F7B0097D55E /* CollectionPerformanceContainTests.swift in Sources */,

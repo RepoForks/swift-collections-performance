@@ -129,7 +129,7 @@
                         <viewLayoutGuide key="safeArea" id="Cwp-Wr-pW5"/>
                     </view>
                     <navigationItem key="navigationItem" title="🇵🇱 Scrabble Dictionary" id="pKW-38-R6f">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Info" id="J8U-Hq-EQP">
+                        <barButtonItem key="rightBarButtonItem" image="Info" id="J8U-Hq-EQP">
                             <connections>
                                 <action selector="infoButtonAction:" destination="06h-u3-O93" id="QyV-fb-JWf"/>
                             </connections>
