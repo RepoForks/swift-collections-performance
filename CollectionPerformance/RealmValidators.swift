@@ -58,7 +58,7 @@ final class SmartRealmWordValidator: CleverValidator {
     }
     /// An array of list of `StringObject`s.
     ///
-    /// Lists in the array contains word with letters count that equals an index of list.
+    /// Lists in the array contains words with letters count that equals an index of list.
     private var words: [List<StringObject>] {
         return realm.objects(CleverVocabulary.self).first!.words
     }

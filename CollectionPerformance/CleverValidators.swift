@@ -27,7 +27,7 @@ final class CleverArrayWordValidator: CleverValidator {
     
     /// An two-dimensional array of strings.
     ///
-    /// Arrays in the array contains word with letters count that equals an index of array.
+    /// Arrays in the array contains words with letters count that equals an index of array.
     private var words = [[String]]()
     
     init() {
@@ -68,7 +68,7 @@ final class CleverSetWordValidator: CleverValidator {
     
     /// A array of set of strings.
     ///
-    /// Sets in the array contains word with letters count that equals an index of set.
+    /// Sets in the array contains words with letters count that equals an index of set.
     private var words = [Set<String>]()
     
     init() {
