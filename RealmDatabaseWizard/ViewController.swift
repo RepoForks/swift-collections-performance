@@ -49,6 +49,7 @@ final class ViewController: NSViewController {
         }
         
         let url = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Database.realm")
+        try? FileManager.default.removeItem(at: url)
         try! realm.writeCopy(toFile: url)
     }
     
@@ -64,7 +65,7 @@ final class ViewController: NSViewController {
             autoreleasepool {
                 let object = StringObject()
                 object.value = word
-                vocabulary.words[word.count]!.append(object)
+                vocabulary.words[word.count].append(object)
             }
         }
         
@@ -73,6 +74,7 @@ final class ViewController: NSViewController {
         }
         
         let url = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("CleverDatabase.realm")
+        try? FileManager.default.removeItem(at: url)
         try! realm.writeCopy(toFile: url)
     }
 }
