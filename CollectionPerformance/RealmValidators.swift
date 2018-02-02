@@ -18,13 +18,16 @@ final class RealmWordValidator: CleverValidator {
 
         return try! Realm(configuration: config)
     }
-    /// A list of `StringObject`s.
-    private var words: List<StringObject> {
+    /// A list of strings.
+    private var words: List<String> {
         return realm.objects(Vocabulary.self).first!.words
     }
 
     func validate(word: String) -> Bool {
-        let predicate = NSPredicate(format: "%K == %@", "value", word.lowercased())
+        // This crashes, because
+        // >> Querying is currently only implemented for arrays of Realm Objects <<
+        // but may be changed in the future
+        let predicate = NSPredicate(format: "SELF == %@", word.lowercased())
         return !words.filter(predicate).isEmpty
     }
 
@@ -33,17 +36,17 @@ final class RealmWordValidator: CleverValidator {
             .map { String($0) }
             .permute()
         
-        let predicate = NSPredicate(format: "%K IN %@", "value", permutes)
+        let predicate = NSPredicate(format: "SELF IN %@",permutes)
         return words
             .filter(predicate)
-            .map { $0.value }
+            .map { $0 }
     }
 
     func regex(phrase: String) -> [String]? {
-        let predicate = NSPredicate(format: "%K LIKE %@", "value", phrase.lowercased())
+        let predicate = NSPredicate(format: "SELF LIKE %@", phrase.lowercased())
         return words
             .filter(predicate)
-            .map { $0.value }
+            .map { $0 }
     }
 }
 
@@ -56,16 +59,16 @@ final class SmartRealmWordValidator: CleverValidator {
 
         return try! Realm(configuration: config)
     }
-    /// An array of list of `StringObject`s.
+    /// An array of list of strings.
     ///
     /// Lists in the array contains words with letters count that equals an index of list.
-    private var words: [List<StringObject>] {
+    private var words: [List<String>] {
         return realm.objects(CleverVocabulary.self).first!.words
     }
     
     func validate(word: String) -> Bool {
         guard words.count > word.count && word.count >= 2 else { return false }
-        let predicate = NSPredicate(format: "%K == %@", "value", word.lowercased())
+        let predicate = NSPredicate(format: "SELF == %@", word.lowercased())
         return !words[word.count].filter(predicate).isEmpty
     }
     
@@ -84,21 +87,21 @@ final class SmartRealmWordValidator: CleverValidator {
 
         return dividedPermutes
             .filter { !$0.isEmpty }
-            .map { permute -> LazyMapRandomAccessCollection<Results<StringObject>, String> in
-                let predicate = NSPredicate(format: "%K IN %@", "value", permute)
+            .map { permute -> LazyMapRandomAccessCollection<Results<String>, String> in
+                let predicate = NSPredicate(format: "SELF IN %@", permute)
 
                 return words[permute.first!.count]
                     .filter(predicate)
-                    .map { $0.value }
+                    .map { $0 }
             }
             .flatMap { $0 }
     }
     
     func regex(phrase: String) -> [String]? {
         guard words.count > phrase.count else { return nil }
-        let predicate = NSPredicate(format: "%K LIKE %@", "value", phrase.lowercased())
+        let predicate = NSPredicate(format: "SELF LIKE %@", phrase.lowercased())
         return words[phrase.count]
             .filter(predicate)
-            .map { $0.value }
+            .map { $0 }
     }
 }

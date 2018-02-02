@@ -38,9 +38,7 @@ final class ViewController: NSViewController {
         
         words.forEach { word in
             autoreleasepool {
-                let object = StringObject()
-                object.value = word
-                vocabulary.words.append(object)
+                vocabulary.words.append(word)
             }
         }
         
@@ -63,9 +61,7 @@ final class ViewController: NSViewController {
         
         words.forEach { word in
             autoreleasepool {
-                let object = StringObject()
-                object.value = word
-                vocabulary.words[word.count].append(object)
+                vocabulary.words[word.count].append(word)
             }
         }
         
