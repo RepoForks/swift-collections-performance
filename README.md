@@ -68,7 +68,7 @@ The repository presents four main types of collection:
 
 ### Standard vs clever collection types
 
-<img src="https://github.com/netguru/collections-performance/blob/master/img/standard-clever.png" width="500"/>
+<img src="https://github.com/netguru/swift-collections-performance/blob/master/img/standard-clever.png" width="500"/>
 
 ## Measurement
 
@@ -78,7 +78,7 @@ All results, but RAM usage, were collected via measurement unit tests. RAM usage
 
 ### Initialization time
 
-<img src="https://github.com/netguru/collections-performance/blob/master/img/init.png" width="500"/>
+<img src="https://github.com/netguru/swift-collections-performance/blob/master/img/init.png" width="500"/>
 
 A time needed to initialize an object.
 
@@ -90,7 +90,7 @@ A time needed to initialize an object.
 
 ### Word validation
 
-<img src="https://github.com/netguru/collections-performance/blob/master/img/search.png" width="500"/>
+<img src="https://github.com/netguru/swift-collections-performance/blob/master/img/search.png" width="500"/>
 
 A time needed to validate correctness of these words one by one: _"rękodzieło", "porównywać", "rodzicielski", "się", "powierzchnia", "substancja", "jeden", "dzień", "w", "kobieta", "narzędzie", "fałszywy", "pizza", "medycyna", "niematakiegoslowa"_.
 
@@ -102,7 +102,7 @@ A time needed to validate correctness of these words one by one: _"rękodzieło"
 
 ### Words made from given letters
 
-<img src="https://github.com/netguru/collections-performance/blob/master/img/letters.png" width="500"/>
+<img src="https://github.com/netguru/swift-collections-performance/blob/master/img/letters.png" width="500"/>
 
 A time needed to find words that can be made from given letters:
 
@@ -116,7 +116,7 @@ A time needed to find words that can be made from given letters:
 
 ### Simple regex for blanks
 
-<img src="https://github.com/netguru/collections-performance/blob/master/img/regex.png" width="500"/>
+<img src="https://github.com/netguru/swift-collections-performance/blob/master/img/regex.png" width="500"/>
 
 A time time needed to find words that fit these simple blank regex one by one: _"p?z?a", "???", "po??r", "pap????", "???????", "tele???"_.
 
@@ -130,12 +130,12 @@ In example: _**po**??**r**_ should return _**po**bó**r**, **po**de**r**, **po**
 
 ### RAM Usage
 
-<img src="https://github.com/netguru/collections-performance/blob/master/img/ram.png" width="500"/>
+<img src="https://github.com/netguru/swift-collections-performance/blob/master/img/ram.png" width="500"/>
 
 RAM usage measured by Xcode profiler on real device running example app:
 
 * **RAM Usage** is RAM usage just after initialization.
-* **Highest RAM** Usage is the highest RAM usage noticed during initialization.
+* **Highest RAM Usage** is the highest RAM usage noticed during initialization.
 
 #### Conclusions
 
