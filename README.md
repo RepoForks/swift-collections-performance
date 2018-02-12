@@ -39,7 +39,7 @@ Comparison of:
 * Xcode 9.2
 * Swift 4.0
 * iPhone 8
-* iOS 11.2.2
+* iOS 11.2.5
 
 ## Installation
 
@@ -96,9 +96,9 @@ A time needed to validate correctness of these words one by one: _"rękodzieło"
 
 #### Conclusions
 
-* One more time there is no big difference between the first four arrays.
+* Again, there is no big difference between the first four arrays.
 * Sets and trie are the fastest.
-* Non-optimized Realm database is faster than arrays, but `CleverArray` and `CleverRealm` seem to be golden mean (especially `CleverRealm` with its rapid initialization).
+* Non-optimized Realm database is faster than arrays, but `CleverArray` and `CleverRealm` seem to be golden mean (a time needed to initialized sets and `Trie` makes them unacceptable).
 
 ### Words made from given letters
 
@@ -111,7 +111,7 @@ A time needed to find words that can be made from given letters:
 
 #### Conclusions
 
-* Difference between 4 and 5 letters is extreme for the first four arrays and `Realm`.
+* There is a huge difference between 4 and 5 letters for standard `Realm` database.
 * Sets, trie, `CleverArray` and `CleverRealm` are really fast in this test.
 
 ### Simple regex for blanks

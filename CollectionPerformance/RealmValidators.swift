@@ -84,10 +84,10 @@ final class SmartRealmWordValidator: CleverValidator {
 
         return dividedPermutes
             .filter { !$0.isEmpty }
-            .map { permute -> LazyMapRandomAccessCollection<Results<StringObject>, String> in
-                let predicate = NSPredicate(format: "%K IN %@", "value", permute)
+            .map { permutes -> [String] in
+                let predicate = NSPredicate(format: "%K IN %@", "value", permutes)
 
-                return words[permute.first!.count]
+                return words[permutes.first!.count]
                     .filter(predicate)
                     .map { $0.value }
             }

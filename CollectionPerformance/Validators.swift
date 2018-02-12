@@ -38,10 +38,13 @@ final class ArrayWordValidator: Validator {
     }
     
     func words(from letters: String) -> [String]? {
-        return letters.lowercased()
+        let permutes = letters.lowercased()
             .map { String($0) }
             .permute()
-            .filter { words.contains($0) }
+        let predicate = NSPredicate(format: "SELF IN %@", permutes)
+        
+        // Filtering with NSPredicate is multiple times faster than permutes.filter { words.contains($0) }
+        return words.filter { predicate.evaluate(with: $0) }
     }
 }
 
@@ -63,10 +66,12 @@ final class CapacityArrayWordValidator: Validator {
     }
     
     func words(from letters: String) -> [String]? {
-        return letters.lowercased()
+        let permutes = letters.lowercased()
             .map { String($0) }
             .permute()
-            .filter { words.contains($0) }
+        let predicate = NSPredicate(format: "SELF IN %@", permutes)
+        
+        return words.filter { predicate.evaluate(with: $0) }
     }
 }
 
@@ -86,10 +91,12 @@ final class ContiguousArrayWordValidator: Validator {
     }
     
     func words(from letters: String) -> [String]? {
-        return letters.lowercased()
+        let permutes = letters.lowercased()
             .map { String($0) }
             .permute()
-            .filter { words.contains($0) }
+        let predicate = NSPredicate(format: "SELF IN %@", permutes)
+        
+        return words.filter { predicate.evaluate(with: $0) }
     }
 }
 
@@ -111,10 +118,12 @@ final class CapacityContiguousArrayWordValidator: Validator {
     }
     
     func words(from letters: String) -> [String]? {
-        return letters.lowercased()
+        let permutes = letters.lowercased()
             .map { String($0) }
             .permute()
-            .filter { words.contains($0) }
+        let predicate = NSPredicate(format: "SELF IN %@", permutes)
+        
+        return words.filter { predicate.evaluate(with: $0) }
     }
 }
 
