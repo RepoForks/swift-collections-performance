@@ -22,7 +22,10 @@ Answer to the question: what collection type is the best to store enormous numbe
 
 ## Idea
 
-Data layer for Scrabble dictionary application based on my experience and performance tests.
+![Scrabble (Photo by Camille Orgel on Unsplash)](https://github.com/netguru/swift-collections-performance/blob/master/img/background.png)
+
+
+Data layer for [Scrabble dictionary application](https://itunes.apple.com/us/app/scrabbdict/id687530221?mt=8) based on my experience and performance tests.
 
 Polish dictionary has almost 3 millions of words and should allow in reasonable time:
 - validating words
@@ -112,7 +115,19 @@ A time needed to find words that can be made from given letters:
 #### Conclusions
 
 * There is a huge difference between 4 and 5 letters for standard `Realm` database.
-* Sets, trie, `CleverArray` and `CleverRealm` are really fast in this test.
+* Sets, trie, `CleverArray` and `CleverRealm` are really fast in this test, so I decided to run more tests for the fastest four of them.
+
+<img src="https://github.com/netguru/swift-collections-performance/blob/master/img/letters-2.png" width="500"/>
+
+<sub><sup>Logarithmic scale, power trendline</sup></sub>
+
+* _a, d, e, p, s, t_ for six letters test,
+* _a, d, e, p, r, s, t_ for seven letters test,
+* _a, d, e, p, r, s, t, z_ for eight letters test.
+
+#### Conclusions
+
+* Sets and trie growth when more letters is reasonable, but `CleverRealm` is useless for more than six letters.
 
 ### Simple regex for blanks
 

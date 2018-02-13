@@ -18,7 +18,7 @@ protocol Validator: class {
     /// - parameter word: The word to validate.
     func validate(word: String) -> Bool
     /// Returns an array of words that can be made from the given letters.
-    /// - parameter letters: The letters
+    /// - parameter letters: The letters.
     func words(from letters: String) -> [String]?
 }
 
@@ -143,6 +143,7 @@ final class SetWordValidator: Validator {
     }
     
     func words(from letters: String) -> [String]? {
+        // For sets this is much faster than NSPredicate
         return letters.lowercased()
             .map { String($0) }
             .permute()

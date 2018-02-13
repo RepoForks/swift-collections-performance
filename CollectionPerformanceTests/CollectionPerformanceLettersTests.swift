@@ -12,7 +12,7 @@ import XCTest
 final class CollectionPerformanceLettersTests: XCTestCase {
     
     private var sut: Validator!
-    private let letters = "spat" //"spatd" "spatde" "spatder"
+    private let letters = "spat" //"spatd" "spatde" "spatder" "spatderz"
     
     override func tearDown() {
         super.tearDown()
