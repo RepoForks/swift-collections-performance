@@ -5,6 +5,7 @@
 * [Mission](#mission)
 * [Idea](#idea)
 * [Environment](#environment)
+  * [Optimizations](#optimizations)
 * [Installation](#installation)
 * [Collection Types](#collection-types)
   * [Standard vs clever collection types](#standard-vs-clever-collection-types)
@@ -43,6 +44,11 @@ Comparison of:
 * Swift 4.0
 * iPhone 8
 * iOS 11.2.5
+
+### Optimizations
+
+* Fast, Whole Module Optimization for the application's target (Release) and all dependencies
+* Run and Test set to Release build configuration
 
 ## Installation
 
