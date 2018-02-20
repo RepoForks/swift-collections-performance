@@ -21,6 +21,8 @@
 
 Answer to the question: what collection type is the best to store enormous number of data?
 
+A comprehensive answer to the question can be found in [this blogpost](https://www.netguru.co/codestories/handling-enormous-collection-types-in-swift).
+
 ## Idea
 
 ![Scrabble (Photo by Camille Orgel on Unsplash)](https://github.com/netguru/swift-collections-performance/blob/master/img/background.png)
